@@ -9,7 +9,7 @@ SECRET_KEY = "12345678910"  # Replace with a strong secret key
 DEBUG = False  # Set True in development, False in production
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "mobileworld-zt9f.onrender.com"]
-CSRF_TRUSTED_ORIGINS = ["https://https://mobileworld-zt9f.onrender.com"]
+CSRF_TRUSTED_ORIGINS = ["https://mobileworld-zt9f.onrender.com"]
 
 # Installed Applications
 INSTALLED_APPS = [
