@@ -19,8 +19,12 @@ urlpatterns = [
     path("cart/", Cart_data, name="cartdata"),
 ]
 
-# ✅ Serve media files manually when DEBUG=False
+# Serve static and media files in production
 if not settings.DEBUG:
     urlpatterns += [
         re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     ]
+
+# For local development
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
