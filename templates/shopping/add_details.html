@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'shopping/add_details.css' %}">
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="left">
+      <img src="./images/samsung.jpg" alt="">
+    </div>
+    <div class="right">
+      <ol class="header">
+        <li><a href="">Signup</a></li>
+        <li><a href="">Login</a></li>
+       <li><select name="more" id="more">
+        <option value="">More</option>
+        <option value="add">Add Details</option>
+        <option value="info">Account info</option>
+       </select></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="form-container">
+  <form action="{% url 'add_details' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h1 style=" margin-bottom: 20px;">Add Details</h1>
+
+    <div><label for="">Phone number</label></div>
+    <div><input type="text" placeholder="Enter Mobile number" required name="phone">
+    </div>
+
+    <div><label for="">Address</label></div>
+    <div><textarea name="address" id=""placeholder = "Enter Address" required></textarea></div>
+
+    <div><label for="">Pin Code</label></div>
+    <div><input type="text" required name="pin" placeholder="Enter Zip code"></div>
+
+    <div><label for="">City</label></div>
+    <div><input type="text" required placeholder="Enter city" name="city"></div>
+
+    <div><label for="">State</label></div>
+    <div><input type="text" required placeholder="state" name="state"></div>
+
+    <div><label for="">Country</label></div>
+    <div><input type="text" name="country" placeholder="Enter Country" required></div>
+    
+    <label for="">Select Profile Photo</label>
+    <input type="file" name="dp" id="" style="border: none;" >
+    
+    
+    <div class="add-btn"><button type="submit">Add</button></div>
+
+  </form>
+</div>
+</body>
+</html>
