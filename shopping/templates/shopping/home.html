@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{% static 'shopping/home.css' %}">
+  <title>Document</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="left">
+      <img src="{% static 'shopping/images/samsung.jpg' %}" alt="">
+    </div>
+    <div class="right">
+      <ol class="header">
+        <li><a href="{% url 'signup' %}">Signup</a></li>
+        <li><a href="{% url 'login' %}">Login</a></li>
+        
+      </ol>
+    </div>
+  </div>
+
+  <h1 style="text-align: center; margin-top: 10px;">Welcome to Mobile World</h1>
+
+  <div class="show-case">
+    <div class="img1">
+      <img src="{% static 'shopping/images/Redmi note13 banner1.jpg' %}" alt="">
+    </div>
+    <div class="img2">
+      <img src="{% static 'shopping/images/redmi note13 banner2.jpg' %}" alt="">
+    </div>
+    <div class="img3">
+      <img src="{% static 'shopping/images/redmi note13 banner2.jpg' %}" alt="">
+    </div>
+  </div>
+
+  <h2 style="text-align: center; margin-top: 30px;"><u>Check our Latest and Premium Products</u></h2>
+
+  <div class="products">
+    <div><img src="{% static '/shopping/images/Nothing 1.jpg ' %}"alt="">
+    <div><p>Nothing 1</p></div></div>
+    <div><img src="{% static 'shopping/images/Iphone 11.webp' %}" alt=""><div><p>Iphone 11 </p></div></div>
+    <div><img src="{% static 'shopping/images/oneplus nord4.webp' %}" alt=""><div><p>Oneplus Nord 4</p></div></div>
+    <div><img src="{% static 'shopping/images/oppo x8.webp' %}" alt=""><div><p>Oppo X8</p></div></div>
+  </div>
+  <div class="products">
+    <div><img src="{% static 'shopping/images/Samsung F23.webp' %}" alt=""><div><p>Samsung F23</p></div></div>
+    <div><img src="{% static 'shopping/images/vivo v29.webp' %}" alt=""><div><p>Vivo V29</p></div></div>
+    <div><img src="{% static 'shopping/images/Realme XT.webp' %}" alt=""><div><p>Realme XT</p></div></div>
+    <div><img src="{% static 'shopping/images/Realme Narzo 70 Turbo.webp' %}" alt=""><div><p>Realme Narzo 70</p></div></div>
+  </div>
+
+
+
+  <div class="footer">
+    <div><h2>Contact us</h2></div>
+    <div>
+      <ol class="footer-icon">
+        <li>whatsapp</li>
+        <li>facebook</li>
+        <li>instagram</li>
+      </ol>
+    </div>
+  </div>
+  
+</body>
+</html>
