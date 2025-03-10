@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static '/shopping/products.css' %}" rel="stylesheet"/>
+  <title>Document</title>
+</head>
+<body>
+  <div class="nav-bar">
+    <div class="left">
+      <h1>Welcome, {{user}}</h1>
+    </div>
+
+    <div class="middle">
+      <form action="{% url 'productpage' %}" method="post">
+        {% csrf_token %}
+      <div class="search-input">
+        <input type="text" placeholder="Search Products" name="search" >
+      </div>
+      <div class="search-button">
+      
+          <button type="submit">Search</button>
+        
+      </div>
+    </form>
+    </div>
+
+    <div class="right">
+        <ol>
+          
+            <li><img style="height: 50px;width: 60px; border-radius: 100%;" src={{profile_pic.user_dp.url}} alt="dummy"></li>
+             
+          
+          <li><a href="{% url 'cartdata' %}"><img style="height: 40px;" src="./../../static/shopping/images/cartlogo.png" alt=""></a></li>
+        </ol>
+      
+    </div>
+  </div>
+  <h1 style="text-align: center;">Mobiles Available</h1>
+  <h2>{{e}}</h2>
+
+  <div class="container">
+    {% for i in products %}
+    <div class="show-case">
+      <div class="images">
+        <img  src={{i.product_image.url}} alt="">
+      </div>
+      <div class="info">
+        <h2>{{i.product_name}}</h2>
+        <p>{{i.id}}</p>
+        <p style="margin-top: 10px;"><b>Price: {{i.price}}</b></p>
+        <div class="buy-button">
+          <a href="{% url 'cart' i.id %}">
+            <button class="cart-btn">Add to Cart</button>
+          </a>
+          <a href="{% url 'product_details' i.id %}">
+            <button class="buy-btn">Buy</button>
+          </a>
+         
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>
