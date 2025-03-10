@@ -4,7 +4,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Security Settings
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "change-this-in-production")
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "12345678910")
 DEBUG = os.getenv("DEBUG", "False").lower() in ["true", "1"]
 
 ALLOWED_HOSTS = ["your-app-name.onrender.com", "127.0.0.1"]
